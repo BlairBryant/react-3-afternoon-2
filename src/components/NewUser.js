@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-//import axios
 import axios from 'axios'
 
 class NewUser extends Component{
@@ -13,7 +11,13 @@ class NewUser extends Component{
         }
     }
     
-    // insert addUser
+    addUser() {
+        // this.setState({name: res.data.name, img: res.data.img, desc: res.data.desc})
+        axios.post('/api/users', this.state).then(res => {
+            let user = res.data
+        }
+        ).catch(console.log)
+    }
 
 
     // insert updateUser    
